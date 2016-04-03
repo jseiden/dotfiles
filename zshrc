@@ -1,1 +1,1 @@
-.zshrc
+/Users/jseiden/.zprezto/runcoms/zshrc

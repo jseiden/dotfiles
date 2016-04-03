@@ -1,0 +1,63 @@
+## list of aliases to source from shell config files
+
+## opens bash and zsh config files
+alias prof="$EDITOR ~/.bash_profile; $EDITOR ~/.zshrc"
+#use after editing .bash_profile or .zshrc
+alias reprof=". ~/.bash_profile; . ~/.zshrc"
+
+# time zsh startup  
+alias ztime="/usr/bin/time /bin/zsh -i -c exit"
+
+#locations
+alias pj="cd ~/Documents/projects;ls"
+alias dt="cd ~/Desktop/;ls"
+alias dl="cd ~/Downloads/;ls"
+alias idx="vim index.html"
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+
+#command shortcuts
+alias cl="clear"
+alias wh="which"
+alias rmi='rm -i'
+# alias ql="qlmanage -p &>/dev/null"
+# alias python='python3'
+
+#websites 
+alias gh="open http://www.github.com/jseiden"
+
+#Git shortcuts
+alias ga="git add"
+alias gs="git status"
+alias gc="git commit"
+alias gb="git branch"
+alias gp="git push"
+alias gf="git fetch"
+alias gl="git ls-files"
+alias gfu="git fetch upstream"
+alias gcb="git checkout -b"
+alias gch="git checkout"
+alias gchm="git checkout master"
+alias gpo="git push origin"
+alias gpom="git push origin master"
+alias gpum="git pull upstream master"
+alias gp="git push"
+alias gpl="git pull"
+alias gpr="git log --pretty=format:'%Cblue%h%Creset %Cgreen%ad%Creset | %s%C(yellow)%d%Creset [%an]' --graph --date=short --decorate"
+alias gd="git diff"
+alias gcl="git clone"
+alias gm="git merge"
+alias gr="git reset"
+alias grb="git rebase"
+alias grbm="git rebase master"
+alias grbc="git rebase --continue"
+alias grv="git remote -v"
+alias gacm="git add .; git commit -m"
+alias gundo="git reset HEAD~"
+
+#npm aliases
+alias npmg="npm list -g --depth=0 2>/dev/null"
+alias npml="npm list --depth=0 2>/dev/null"
