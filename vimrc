@@ -15,6 +15,7 @@ Plugin 'gmarik/Vundle.vim'
  Plugin 'tpope/vim-unimpaired'
  Plugin 'tpope/vim-repeat'
  Plugin 'tpope/vim-ragtag'
+ Plugin 'justinmk/vim-sneak'
 
 " use programs outside vim
  Plugin 'thinca/vim-quickrun'
@@ -372,3 +373,8 @@ let g:auto_save_in_insert_mode = 0
 " yankstack plugin- go back in yank time  after pasting once
 nmap <Leader>p <Plug>yankstack_substitute_older_paste
 nmap <Leader>P <Plug>yankstack_substitute_newer_paste
+
+" vim-sneak- remap s and S to gs and gs S  to preserve default s behavior
+" let g:sneak#streak = 1
+nmap s = <Plug>Sneak_s
+nmap S = <Plug>Sneak_S
