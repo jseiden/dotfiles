@@ -16,7 +16,8 @@ Plugin 'gmarik/Vundle.vim'
  Plugin 'tpope/vim-repeat'
  Plugin 'tpope/vim-ragtag'
  Plugin 'justinmk/vim-sneak'
-
+ Plugin 'wellle/targets.vim'
+ 
 " use programs outside vim
  Plugin 'thinca/vim-quickrun'
  Plugin 'jez/vim-superman'
