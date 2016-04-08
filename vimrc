@@ -1,6 +1,5 @@
 "" VUNDLE and PLUGINS """""""""""""""""""""""""""
 
-
 " required for Vundle plugin manager
 set nocompatible 
 filetype off
@@ -15,7 +14,6 @@ Plugin 'gmarik/Vundle.vim'
  Plugin 'tpope/vim-unimpaired'
  Plugin 'tpope/vim-repeat'
  Plugin 'tpope/vim-ragtag'
- Plugin 'justinmk/vim-sneak'
  Plugin 'wellle/targets.vim'
  
 " use programs outside vim
@@ -23,27 +21,18 @@ Plugin 'gmarik/Vundle.vim'
  Plugin 'jez/vim-superman'
  Plugin 'christoomey/vim-tmux-navigator'
 
-" misc
- Plugin 'sjl/gundo.vim'
- Plugin 'chrisbra/NrrwRgn'
- Plugin 'maxbrunsfeld/vim-yankstack'
- Plugin 'tpope/vim-vinegar'
- Plugin 'tpope/vim-commentary'
- Plugin 'vim-auto-save'
-" Plugin 'Shougo/vimproc.vim'
-
 " visual aide
  Plugin 'bling/vim-airline'
  Plugin 'nathanaelkane/vim-indent-guides'
  Plugin 'unblevable/quick-scope'
-" Plugin 'easymotion/vim-easymotion'
 
 " search
  Plugin 'kien/ctrlp.vim'
 
-" completion
+" completion etc.
  Plugin 'ervandew/supertab'
  Plugin 'jiangmiao/auto-pairs'
+ Plugin 'osyo-manga/vim-over'
 
 " lang specific 
  Plugin 'pangloss/vim-javascript'
@@ -53,12 +42,21 @@ Plugin 'gmarik/Vundle.vim'
  Plugin 'romainl/Apprentice'
  Plugin 'skammer/vim-css-color'
 
+" misc
+ Plugin 'sjl/gundo.vim'
+ Plugin 'maxbrunsfeld/vim-yankstack'
+ Plugin 'tpope/vim-vinegar'
+ Plugin 'tpope/vim-commentary'
+ Plugin 'vim-auto-save'
+" Plugin 'Shougo/vimproc.vim'
+
 
 " required for Vundle
 call vundle#end()           
 
 " required after Vundle stuff 
 filetype plugin indent on   
+
 
 "" GENERAL SETTINGS """""""""""""""""""""""""""
 syntax on 
@@ -107,7 +105,7 @@ set autoread
 " shows results while typing 
 set incsearch 
 " highlights search
-set hlsearch  
+" set hlsearch  
 
 " case insensitive when lowercase but not upper
 set smartcase
@@ -175,9 +173,11 @@ set nrformats=octal,hex,alpha
 
 "" MAPPINGS """""""""""""""""""""""""""
 
-
-" delete whole line on command-ine like Emacs. replaces 'digraph'
+" delete whole command-ine like Emacs. replaces 'digraph'
 cnoremap <C-K> <C-E><C-U>
+
+" go to beginning of command-line like emacs and OS X
+cnoremap <C-A> <C-B>
 
 " remap Q to avoid accidental Ex mode- can still type :ex if need be
 nnoremap Q <nop>
@@ -375,7 +375,5 @@ let g:auto_save_in_insert_mode = 0
 nmap <Leader>p <Plug>yankstack_substitute_older_paste
 nmap <Leader>P <Plug>yankstack_substitute_newer_paste
 
-" vim-sneak- remap s and S to gs and gs S  to preserve default s behavior
-" let g:sneak#streak = 1
-nmap s = <Plug>Sneak_s
-nmap S = <Plug>Sneak_S
+" vim-css-color
+" let g:cssColorVimDoNotMessMyUpdatetime = 1
