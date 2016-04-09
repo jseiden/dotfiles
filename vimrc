@@ -21,9 +21,9 @@ Plugin 'gmarik/Vundle.vim'
  Plugin 'jez/vim-superman'
  Plugin 'christoomey/vim-tmux-navigator'
 
-" visual aide
+" visual aid
  Plugin 'bling/vim-airline'
- Plugin 'nathanaelkane/vim-indent-guides'
+ " Plugin 'nathanaelkane/vim-indent-guides'
  Plugin 'unblevable/quick-scope'
 
 " search
@@ -39,7 +39,7 @@ Plugin 'gmarik/Vundle.vim'
  Plugin 'walm/jshint.vim'
 
 " colors
- Plugin 'romainl/Apprentice'
+ " Plugin 'romainl/Apprentice'
  Plugin 'skammer/vim-css-color'
 
 " misc
@@ -58,70 +58,79 @@ call vundle#end()
 filetype plugin indent on   
 
 
-"" GENERAL SETTINGS """""""""""""""""""""""""""
-syntax on 
+" enable matchit plugin (for matching html tags)
+runtime macros/matchit.vim
 
-" define leader key
-let g:mapleader="\<Space>" 
+"" GENERAL SETTINGS """""""""""""""""""""""""""
+
+" share clipboard with osx
+set clipboard=unnamed
+
+" enable mouse in (a)ll modes 
+set mouse=a
+
+" flash screen instead of beeping for error
+set visualbell 
 
 " enable switching between unsaved buffers
 set hidden 
 
-" set lines=35 columns=150
-" set colorcolumn=0
+" refresh unsaved files if changed elsewhere (unless deleted)
+set autoread
 
-" enable matchit plugin (for matching html tags)
-runtime macros/matchit.vim
- " shows matching brace etc.
-set showmatch 
+" redraw less often
+set lazyredraw 
 
-" omnicomplete settings
-set omnifunc=syntaxcomplete#Complete
+" for fast terminal connection. let vim redraw faster
+set ttyfast
+
+" time between key presses 
+set timeoutlen=300 ttimeoutlen=300
+
+" enable syntax highlighting 
+syntax on 
 
 " displays current mode
 set showmode  
 
+" always show status line
+set laststatus=2
+
 " displays last command
 set showcmd
 
-" line numbers 
+" displays line numbers 
 set number
 
 " number of lines below cursor
 set scrolloff=2
+
+" ignore case while searching (smartcase is another option)
+set ignorecase
+
+" shows results while typing 
+set incsearch 
+" highlights search
+set hlsearch  
+
+ " shows matching brace etc.
+set showmatch 
 
 " highlight cursor pos 
 set cursorline 
 hi cursorline cterm=none
 hi cursorlinenr ctermfg=red
 
-" don't autotab when pasting
-" set paste seems to mess up delimitMate
-"set paste
+" omnicomplete settings
+set omnifunc=syntaxcomplete#Complete
 
-" refresh unsaved files 
-set autoread
-
-" shows results while typing 
-set incsearch 
-" highlights search
-" set hlsearch  
-
-" case insensitive when lowercase but not upper
-set smartcase
-
-" predictive stuff?
+" predictive stuff
 set wildmode=longest,list,full
 set wildmenu 
 
-" redraws less often
-set lazyredraw 
-
-" fast terminal connection
-set ttyfast
-
-" flash screen instead of beeping for error
-set visualbell 
+" don't autotab when pasting
+" set paste seems to mess up delimitMate
+"set paste
 
 " turn off auto comment insertion
 set formatoptions-=cro
@@ -129,39 +138,25 @@ set formatoptions-=cro
 " append to buffer on new line
 set cpoptions+=>
 
-" always show status line
-set laststatus=2
-
 " make backspace work in insert mode
 set backspace=2
-
-" splitting a window will put new window to the right of current one 
-set splitright
-
-" time between key presses 
-set timeoutlen=300 ttimeoutlen=300
 
 " makes tabs = spaces and other tab behavior 
 set expandtab 
 set smarttab
 set shiftwidth=2
 
-" autoindent, unlike cindent, doesnt interfere with filetype based indentation 
-set autoindent
-"set smartindent
+" splitting a window will put new window to the right of current one 
+set splitright
+
+" predict indent on new line 
+set smartindent
+" set autoindent
 
 " wrap settings
 set nowrap
 set textwidth=80
 set formatoptions+=t
-
-" shares clipboard with osx
-set clipboard=unnamed
-
-" make clickable
-set mouse=a
-"??
-" set modifiable 
 
 " stay at same column when changing lines  
 set nostartofline
@@ -173,6 +168,9 @@ set nrformats=octal,hex,alpha
 
 "" MAPPINGS """""""""""""""""""""""""""
 
+" define leader key
+let g:mapleader="\<Space>" 
+
 " delete whole command-ine like Emacs. replaces 'digraph'
 cnoremap <C-K> <C-E><C-U>
 
@@ -182,19 +180,22 @@ cnoremap <C-A> <C-B>
 " remap Q to avoid accidental Ex mode- can still type :ex if need be
 nnoremap Q <nop>
 
-" remove hilight from search results
+" remove highlight from search results
 " nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 nnoremap <Leader><Leader> :nohlsearch<Bar>:echo<CR>
 
 " semicolon twice to open vim command line 
 nnoremap ;; :
 
+" press enter to go to line number like G or gg
+nnoremap <CR> G
+
+" shortcut for external command 
+nnoremap ! :!
+
 " behavior during fFtT
 " nnoremap <expr> ; getcharsearch().forward ? ';' : ',' 
 " nnoremap <expr> , getcharsearch().forward ? ',' : ';' 
-
-" press enter to go to line number like G or gg
-nnoremap <CR> G
 
 " center search results
 :nnoremap n nzz
@@ -204,21 +205,9 @@ nnoremap <CR> G
 :nnoremap g* g*zz
 :nnoremap g# g#zz
 
-" shortcut for external command 
-nnoremap ! :!
-
 " don't lose selection during multiple indents
 xnoremap <  <gv
 xnoremap >  >gv
-
-" insert mode shortcuts
-inoremap II <Esc>I
-inoremap AA <Esc>A
-inoremap OO <Esc>O
-inoremap CC <Esc>C
-inoremap SS <Esc>S
-inoremap DD <Esc>dd
-inoremap UU <Esc>u
 
 " go to end of line when pasting
 vnoremap <silent> y y`]
@@ -226,7 +215,6 @@ vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
 "" LEADER MAPPINGS ""
-" *try to keep alphabetical
 
 " switch to alertnatve buffer
 nnoremap <Leader>a <C-^>
@@ -250,15 +238,12 @@ nnoremap <Leader>g :GundoToggle<CR>
 " yank line to new buffer
 vnoremap <Leader>h y:vnew<CR>p
 nnoremap <Leader>h yy:vnew<CR>p 
-" inoremap <Leader>h <Esc>yy:vnew<CR>p
 
 " move lines around a la sublime text
 nnoremap <Leader>j :m+<cr>==
 vnoremap <Leader>j :m'>+<cr>gv=gv
-"inoremap <Leader>j <esc>:m+<cr>==gi
 nnoremap <Leader>k :m-2<cr>==
 vnoremap <Leader>k :m-2<cr>gv=gv
-"inoremap <Leader>k <esc>:m-2<cr>==gi
 
 " <Leader>p is defined in plugin section for yankstack
 
@@ -270,13 +255,11 @@ nnoremap <Leader>q :q<CR>
 
 " <Leader>r is assigned to QuickRun. think 'run!'
 
-" open plugin Scratch buffer
-nnoremap <Leader>s :Scratch<CR>
-
 " source this config
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 
 " fuzzy find and open using v
+" TODO: fix v opening in different vim instance or switch plugins 
 nnoremap <Leader>v :!v<Space>
 
 " save buffer
@@ -285,11 +268,11 @@ nnoremap <Leader>w :write<CR>
 " Surround word with quotes
 map <Leader>' ysiw'
 map <Leader>" ysiw"
-"
+
 " Add Trailing Semi-colon
 map <Leader>; g_a;<Esc>
 
-" move to specific buffers
+" move to specific numbered buffer
 nnoremap <Leader>1 :1b<CR>
 nnoremap <Leader>2 :2b<CR>
 nnoremap <Leader>3 :3b<CR>
@@ -308,9 +291,6 @@ nnoremap <Leader>0 :10b<CR>
 cabbrev PI PluginInstall
 cabbrev PC PluginClean
 
-" clear term on exit
-" au VimLeave * :!clear
-
 " set Mark for last file of given type
 autocmd BufLeave *.css,*.less,*scss normal! mC
 autocmd BufLeave *.html             normal! mH
@@ -327,6 +307,7 @@ augroup autoquickfix
     autocmd QuickFixCmdPost [^l]* cwindow
     autocmd QuickFixCmdPost    l* lwindow
 augroup END
+
 " save buffers when focus is lost 
 au FocusLost * :wa
 au FocusLost * silent! wa
@@ -342,21 +323,21 @@ augroup END
 " let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 " let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-" term layout after quitting
+" reset term layout after quitting vim. hides vim buffer and displays old shell
 if &term =~ "xterm"
     let &t_ti = "\<Esc>[?47h"
     let &t_te = "\<Esc>[?47l"
 endif
 
 "TODO:
-" trying to enable meta (alt) key. would add lots of room for cool stuff
+" try to enable meta (alt) key. would add lots of room for cool stuff
 "execute "set <M-e>=\ee"
 
 
 
 "" PLUGIN SPECIFIC SETTINGS """""""""""""""""""""""""""""""""""""""""""""""""""
 
-" vim-airline Enable the list of buffers
+" vim-airline enable the list of buffers on top
 let g:airline#extensions#tabline#enabled = 1
 
 " vim-ragtag 
@@ -375,5 +356,5 @@ let g:auto_save_in_insert_mode = 0
 nmap <Leader>p <Plug>yankstack_substitute_older_paste
 nmap <Leader>P <Plug>yankstack_substitute_newer_paste
 
-" vim-css-color
+" vim-csscolor
 " let g:cssColorVimDoNotMessMyUpdatetime = 1
