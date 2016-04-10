@@ -1,13 +1,16 @@
 "" VUNDLE and PLUGINS """""""""""""""""""""""""""
 
-" required for Vundle plugin manager
+" the following is required for Vundle plugin manager
+" disable vi compatible
 set nocompatible 
+" don't detect filetype
 filetype off
+" put Vundlr in path
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Plugins  
-Plugin 'gmarik/Vundle.vim'
+ Plugin 'gmarik/Vundle.vim'
 
 " extend text objects etc
  Plugin 'tpope/vim-surround'
@@ -50,16 +53,15 @@ Plugin 'gmarik/Vundle.vim'
  Plugin 'vim-auto-save'
 " Plugin 'Shougo/vimproc.vim'
 
-
 " required for Vundle
 call vundle#end()           
 
 " required after Vundle stuff 
 filetype plugin indent on   
 
-
-" enable matchit plugin (for matching html tags)
+" enable included matchit.vim plugin (for matching html tags)
 runtime macros/matchit.vim
+
 
 "" GENERAL SETTINGS """""""""""""""""""""""""""
 
@@ -69,7 +71,7 @@ set clipboard=unnamed
 " enable mouse in (a)ll modes 
 set mouse=a
 
-" flash screen instead of beeping for error
+" flash screen instead of annoying beep for error
 set visualbell 
 
 " enable switching between unsaved buffers
@@ -103,7 +105,7 @@ set showcmd
 set number
 
 " number of lines below cursor
-set scrolloff=2
+set scrolloff=3
 
 " ignore case while searching (smartcase is another option)
 set ignorecase
@@ -149,9 +151,8 @@ set shiftwidth=2
 " splitting a window will put new window to the right of current one 
 set splitright
 
-" predict indent on new line 
+" predict indent on new line (autoindent is another option)
 set smartindent
-" set autoindent
 
 " wrap settings
 set nowrap
@@ -161,9 +162,8 @@ set formatoptions+=t
 " stay at same column when changing lines  
 set nostartofline
 
-" increment/decrement letters with <C-a> and <C-x> (like numbers)
+" increment/decrement letters in normal mode with <C-a> and <C-x> (like numbers)
 set nrformats=octal,hex,alpha
-
 
 
 "" MAPPINGS """""""""""""""""""""""""""
@@ -171,7 +171,7 @@ set nrformats=octal,hex,alpha
 " define leader key
 let g:mapleader="\<Space>" 
 
-" delete whole command-ine like Emacs. replaces 'digraph'
+" delete whole command-line like Emacs. replaces 'digraph'
 cnoremap <C-K> <C-E><C-U>
 
 " go to beginning of command-line like emacs and OS X
@@ -285,9 +285,9 @@ nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
 
 
-
 "" MISC """"""""""""""""""""""""""""""""""""""""""""""""""
 
+" common Vundle commands 
 cabbrev PI PluginInstall
 cabbrev PC PluginClean
 
@@ -298,10 +298,15 @@ autocmd BufLeave *.js               normal! mJ
 autocmd BufLeave *.php              normal! mP
 autocmd BufLeave vimrc,*.vim        normal! mV
 
-" change working dir to current file
+" change working dir to that of current file
 autocmd BufEnter * silent! lcd %:p:h
 
-" open location/quickfix window when list is available
+" save folds between sessions
+" TODO: fix error due to mkview on blank files
+autocmd BufWinLeave * silent mkview
+autocmd BufWinEnter * silent loadview
+
+" open location/quickfix automatically when list is available
 augroup autoquickfix
     autocmd!
     autocmd QuickFixCmdPost [^l]* cwindow
@@ -309,8 +314,8 @@ augroup autoquickfix
 augroup END
 
 " save buffers when focus is lost 
-au FocusLost * :wa
-au FocusLost * silent! wa
+au FocusLost *.* :wa
+au FocusLost *.* silent! wa
 
 " automatically reload .vimrc
 augroup myvimrc
@@ -329,10 +334,9 @@ if &term =~ "xterm"
     let &t_te = "\<Esc>[?47l"
 endif
 
-"TODO:
+" TODO:
 " try to enable meta (alt) key. would add lots of room for cool stuff
 "execute "set <M-e>=\ee"
-
 
 
 "" PLUGIN SPECIFIC SETTINGS """""""""""""""""""""""""""""""""""""""""""""""""""
