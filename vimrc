@@ -1,18 +1,18 @@
 "" VUNDLE and PLUGINS """""""""""""""""""""""""""
 
 " the following is required for Vundle plugin manager
-" disable vi compatible
+" disable vi compatability
 set nocompatible 
 " don't detect filetype
 filetype off
-" put Vundlr in path
+" put Vundle in path
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Plugins  
  Plugin 'gmarik/Vundle.vim'
 
-" extend text objects etc
+" extend text objects etc.
  Plugin 'tpope/vim-surround'
  Plugin 'tpope/vim-unimpaired'
  Plugin 'tpope/vim-repeat'
@@ -26,8 +26,8 @@ call vundle#begin()
 
 " visual aid
  Plugin 'bling/vim-airline'
- " Plugin 'nathanaelkane/vim-indent-guides'
  Plugin 'unblevable/quick-scope'
+ " Plugin 'nathanaelkane/vim-indent-guides'
 
 " search
  Plugin 'kien/ctrlp.vim'
@@ -42,8 +42,8 @@ call vundle#begin()
  Plugin 'walm/jshint.vim'
 
 " colors
- " Plugin 'romainl/Apprentice'
  Plugin 'skammer/vim-css-color'
+ " Plugin 'romainl/Apprentice'
 
 " misc
  Plugin 'sjl/gundo.vim'
@@ -56,7 +56,7 @@ call vundle#begin()
 " required for Vundle
 call vundle#end()           
 
-" required after Vundle stuff 
+" required after Vundle 
 filetype plugin indent on   
 
 " enable included matchit.vim plugin (for matching html tags)
@@ -92,16 +92,16 @@ set timeoutlen=300 ttimeoutlen=300
 " enable syntax highlighting 
 syntax on 
 
-" displays current mode
+" display current mode
 set showmode  
 
 " always show status line
 set laststatus=2
 
-" displays last command
+" display last command
 set showcmd
 
-" displays line numbers 
+" display line numbers 
 set number
 
 " number of lines below cursor
@@ -110,12 +110,12 @@ set scrolloff=3
 " ignore case while searching (smartcase is another option)
 set ignorecase
 
-" shows results while typing 
+" show results while typing 
 set incsearch 
-" highlights search
+" highlight search
 set hlsearch  
 
- " shows matching brace etc.
+ " show matching brace etc.
 set showmatch 
 
 " highlight cursor pos 
@@ -143,7 +143,7 @@ set cpoptions+=>
 " make backspace work in insert mode
 set backspace=2
 
-" makes tabs = spaces and other tab behavior 
+" make tabs = spaces and other tab behavior 
 set expandtab 
 set smarttab
 set shiftwidth=2
