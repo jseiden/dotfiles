@@ -107,8 +107,8 @@ set number
 " number of lines below cursor
 set scrolloff=3
 
-" ignore case while searching (smartcase is another option)
-set ignorecase
+" lowercase search matches upper and lower. upper only matches upper
+set ignorecase smartcase
 
 " show results while typing 
 set incsearch 
