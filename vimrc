@@ -126,8 +126,9 @@ hi cursorlinenr ctermfg=red
 " omnicomplete settings
 set omnifunc=syntaxcomplete#Complete
 
-" predictive stuff
+" completion behavior
 set wildmode=longest,list,full
+" use tab to show possible completions
 set wildmenu 
 
 " don't autotab when pasting
@@ -303,8 +304,8 @@ autocmd BufEnter * silent! lcd %:p:h
 
 " save folds between sessions
 " TODO: fix error due to mkview on blank files
-autocmd BufWinLeave * silent mkview
-autocmd BufWinEnter * silent loadview
+" autocmd BufWinLeave * silent mkview
+" autocmd BufWinEnter * silent loadview
 
 " open location/quickfix automatically when list is available
 augroup autoquickfix
