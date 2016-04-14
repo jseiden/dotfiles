@@ -1,4 +1,4 @@
-"" VUNDLE and PLUGINS """""""""""""""""""""""""""
+"" VUNDLE and PLUGINS """""""""""""""""""""""""""""""
 
 " the following settings is required for Vundle plugin manager
 " disable vi compatability
@@ -81,13 +81,13 @@ set hidden
 set autoread
 
 " redraw less often
-" set lazyredraw 
+set lazyredraw 
 
 " for fast terminal connection. let vim redraw faster
-" set ttyfast
+set ttyfast
 
 " time between key presses 
-set timeoutlen=300 ttimeoutlen=300
+set timeoutlen=1000 ttimeoutlen=10
 
 " enable syntax highlighting 
 syntax on 
