@@ -1,4 +1,4 @@
- This is a central directory to organize and backup my favorite config files. 
+ This is directory to organize and backup various config files. 
  
  Feel free to take a look around.
 

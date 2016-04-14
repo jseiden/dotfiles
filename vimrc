@@ -1,6 +1,6 @@
 "" VUNDLE and PLUGINS """""""""""""""""""""""""""
 
-" the following is required for Vundle plugin manager
+" the following settings is required for Vundle plugin manager
 " disable vi compatability
 set nocompatible 
 " don't detect filetype
@@ -19,7 +19,7 @@ call vundle#begin()
  Plugin 'tpope/vim-ragtag'
  Plugin 'wellle/targets.vim'
  
-" use programs outside vim
+" use resources outside vim
  Plugin 'thinca/vim-quickrun'
  Plugin 'jez/vim-superman'
  Plugin 'christoomey/vim-tmux-navigator'
@@ -29,8 +29,9 @@ call vundle#begin()
  Plugin 'unblevable/quick-scope'
  " Plugin 'nathanaelkane/vim-indent-guides'
 
-" search
+" search and file navigation
  Plugin 'kien/ctrlp.vim'
+ Plugin 'tpope/vim-vinegar'
 
 " completion etc.
  Plugin 'ervandew/supertab'
@@ -48,7 +49,6 @@ call vundle#begin()
 " misc
  Plugin 'sjl/gundo.vim'
  Plugin 'maxbrunsfeld/vim-yankstack'
- Plugin 'tpope/vim-vinegar'
  Plugin 'tpope/vim-commentary'
  Plugin 'vim-auto-save'
 " Plugin 'Shougo/vimproc.vim'
@@ -81,10 +81,10 @@ set hidden
 set autoread
 
 " redraw less often
-set lazyredraw 
+" set lazyredraw 
 
 " for fast terminal connection. let vim redraw faster
-set ttyfast
+" set ttyfast
 
 " time between key presses 
 set timeoutlen=300 ttimeoutlen=300
