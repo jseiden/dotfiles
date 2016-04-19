@@ -2,13 +2,13 @@
 
 ## opens bash and zsh config files
 alias prof="$EDITOR ~/.bash_profile; $EDITOR ~/.zshrc"
-#use after editing .bash_profile or .zshrc
+# use after editing .bash_profile or .zshrc
 alias reprof=". ~/.bash_profile; . ~/.zshrc"
 
 # time zsh startup  
 alias ztime="/usr/bin/time /bin/zsh -i -c exit"
 
-#locations
+# locations
 alias pj="cd ~/Documents/projects;ls"
 alias dt="cd ~/Desktop/;ls"
 alias dl="cd ~/Downloads/;ls"
@@ -19,17 +19,17 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
-#command shortcuts
+# command shortcuts
 alias cl="clear"
 alias wh="which"
 alias rmi='rm -i'
 # alias ql="qlmanage -p &>/dev/null"
 # alias python='python3'
 
-#websites 
+# websites 
 alias gh="open http://www.github.com/jseiden"
 
-#Git shortcuts
+# Git shortcuts
 alias ga="git add"
 alias gs="git status"
 alias gc="git commit"
@@ -58,6 +58,6 @@ alias grv="git remote -v"
 alias gacm="git add .; git commit -m"
 alias gundo="git reset HEAD~"
 
-#npm aliases
+# npm aliases
 alias npmg="npm list -g --depth=0 2>/dev/null"
 alias npml="npm list --depth=0 2>/dev/null"
