@@ -32,6 +32,7 @@ call vundle#begin()
 " search and file navigation
  Plugin 'kien/ctrlp.vim'
  Plugin 'tpope/vim-vinegar'
+ Plugin 'junegunn/fzf'
 
 " completion etc.
  Plugin 'ervandew/supertab'
@@ -64,6 +65,9 @@ runtime macros/matchit.vim
 
 
 "" GENERAL SETTINGS """""""""""""""""""""""""""
+
+" disable .swp files
+set noswapfile
 
 " share clipboard with osx
 set clipboard=unnamed
@@ -166,6 +170,9 @@ set nostartofline
 " increment/decrement letters in normal mode with <C-a> and <C-x> (like numbers)
 set nrformats=octal,hex,alpha
 
+" make :! shell interactive
+" gives tty error when using vman
+" set shellcmdflag=-ic
 
 "" MAPPINGS """""""""""""""""""""""""""
 
@@ -233,6 +240,9 @@ nnoremap <Leader>bp :bp<CR>
 " diff edited buffer with saved version
 nnoremap <Leader>d :w !diff % -<CR>
 
+" fzf fuzzy find plugin
+nnoremap <Leader>f :FZF<CR>
+
 " toggle Gundo tree
 nnoremap <Leader>g :GundoToggle<CR>
 
@@ -255,6 +265,9 @@ nnoremap <Leader>n :!node %<CR>
 nnoremap <Leader>q :q<CR>
 
 " <Leader>r is assigned to QuickRun. think 'run!'
+
+" save all files if changes 
+nnoremap <Leader>u :update<CR>
 
 " source this config
 nnoremap <Leader>sv :source $MYVIMRC<CR>
