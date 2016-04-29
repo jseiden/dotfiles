@@ -27,6 +27,7 @@ call vundle#begin()
  Plugin 'bling/vim-airline'
  Plugin 'unblevable/quick-scope'
  " Plugin 'nathanaelkane/vim-indent-guides'
+ Plugin 'yggdroot/indentline'
 
 " search and file navigation
  Plugin 'kien/ctrlp.vim'
@@ -66,7 +67,9 @@ runtime macros/matchit.vim
 "" GENERAL SETTINGS """""""""""""""""""""""""""
 
 " disable .swp files
-set noswapfile
+" set noswapfile
+
+set modifiable
 
 " share clipboard with osx
 set clipboard=unnamed
