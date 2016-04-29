@@ -188,11 +188,10 @@ cnoremap <C-A> <C-B>
 nnoremap Q <nop>
 
 " remove highlight from search results
-" nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
-nnoremap <Leader><Leader> :nohlsearch<Bar>:echo<CR>
+nnoremap <esc> :noh<return><esc>
 
-" semicolon twice to open vim command line 
-nnoremap ;; :
+" quickly enter command mode 
+nnoremap <cr> :
 
 " press enter to go to line number like G or gg
 nnoremap <CR> G
