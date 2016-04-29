@@ -21,7 +21,6 @@ call vundle#begin()
  
 " use resources outside vim
  Plugin 'thinca/vim-quickrun'
- Plugin 'jez/vim-superman'
  Plugin 'christoomey/vim-tmux-navigator'
 
 " visual aid
