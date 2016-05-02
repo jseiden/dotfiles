@@ -26,8 +26,8 @@ call vundle#begin()
 " visual aid
  Plugin 'bling/vim-airline'
  Plugin 'unblevable/quick-scope'
- " Plugin 'nathanaelkane/vim-indent-guides'
  Plugin 'yggdroot/indentline'
+ " Plugin 'nathanaelkane/vim-indent-guides'
 
 " search and file navigation
  Plugin 'kien/ctrlp.vim'
@@ -63,6 +63,9 @@ filetype plugin indent on
 " enable included matchit.vim plugin (for matching html tags)
 runtime macros/matchit.vim
 
+" common Vundle commands 
+cabbrev PI PluginInstall
+cabbrev PC PluginClean
 
 "" GENERAL SETTINGS """""""""""""""""""""""""""
 
@@ -70,6 +73,9 @@ runtime macros/matchit.vim
 " set noswapfile
 
 set modifiable
+
+" enable syntax highlighting 
+syntax on 
 
 " share clipboard with osx
 set clipboard=unnamed
@@ -95,9 +101,6 @@ set ttyfast
 " time between key presses 
 set timeoutlen=1000 ttimeoutlen=10
 
-" enable syntax highlighting 
-syntax on 
-
 " display current mode
 set showmode  
 
@@ -118,6 +121,7 @@ set ignorecase smartcase
 
 " show results while typing 
 set incsearch 
+
 " highlight search
 set hlsearch  
 
@@ -187,8 +191,8 @@ cnoremap <C-K> <C-E><C-U>
 " go to beginning of command-line like emacs and OS X
 cnoremap <C-A> <C-B>
 
-" remap Q to avoid accidental Ex mode- can still type :ex if need be
-nnoremap Q <nop>
+" remap Q to avoid accidental Ex mode
+" nnoremap Q <nop>
 
 " remove highlight from search results
 nnoremap <esc> :noh<return><esc>
@@ -207,12 +211,12 @@ nnoremap ! :!
 " nnoremap <expr> , getcharsearch().forward ? ',' : ';' 
 
 " center search results
-:nnoremap n nzz
-:nnoremap N Nzz
-:nnoremap * *zz
-:nnoremap # #zz
-:nnoremap g* g*zz
-:nnoremap g# g#zz
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
 
 " don't lose selection during multiple indents
 xnoremap <  <gv
@@ -273,19 +277,12 @@ nnoremap <Leader>u :update<CR>
 " source this config
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 
-" fuzzy find and open using v
-" TODO: fix v opening in different vim instance or switch plugins 
-nnoremap <Leader>v :!v<Space>
-
 " save buffer
 nnoremap <Leader>w :write<CR>
 
-" Surround word with quotes
-map <Leader>' ysiw'
-map <Leader>" ysiw"
 
 " Add Trailing Semi-colon
-map <Leader>; g_a;<Esc>
+nnoremap <Leader>; g_a;<Esc>
 
 " move to specific numbered buffer
 nnoremap <Leader>1 :1b<CR>
@@ -299,12 +296,11 @@ nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
 
+" Surround word with quotes
+map <Leader>' ysiw'
+map <Leader>" ysiw"
 
 "" MISC """"""""""""""""""""""""""""""""""""""""""""""""""
-
-" common Vundle commands 
-cabbrev PI PluginInstall
-cabbrev PC PluginClean
 
 " set Mark for last file of given type
 autocmd BufLeave *.css,*.less,*scss normal! mC
