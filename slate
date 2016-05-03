@@ -1,0 +1,84 @@
+# Global Config
+config defaultToCurrentScreen true
+config focusPreferSameApp true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config switchShowTitles true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+config windowHintsDuration 5
+config windowHintsShowIcons true
+
+# Aliases
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias topright corner top-right resize:screenSizeX/3;screenSizeY/3
+
+alias showHintsLeftHand hint AOEUIYQJKX
+alias showNormalHint hint AOEUIDHTNSYXFBPKGMCW
+
+# Hyper key 
+alias hyper ctrl;shift;alt;cmd
+
+# Resize Bindings
+bind right:alt       resize +10% +0    # moves right side to the right
+bind left:alt        resize -10% +0  # moves right side to the left 
+bind up:alt          resize +0   -10%  #moves bottom side up 
+bind down:alt        resize +0   +10%   #moves bottom side down 
+
+#TODO rebind this section 
+#bind right:ctrl;alt  resize -10% +0 bottom-right
+#bind left:ctrl;alt   resize +10% +0 bottom-right
+#bind up:ctrl;alt     resize +0   +10% bottom-right
+#bind down:ctrl;alt   resize +0   -10% bottom-right
+
+# Push Bindings
+bind right:ctrl;shift;alt;cmd  push right bar-resize:screenSizeX/2  #moves window to right third
+bind left:ctrl;shift;alt;cmd   push left  bar-resize:screenSizeX/2  #moves window to left third
+bind up:ctrl;shift;alt;cmd     push up    bar-resize:screenSizeY/2  #moves window to upper half
+bind down:ctrl;shift;alt;cmd   push down  bar-resize:screenSizeY/2  #moves window to lower half
+
+bind f:ctrl;shift;alt;cmd ${full}  # full screen 
+
+# Nudge Bindings
+bind right:ctrl;alt nudge +10% +0   #moves window a little bit to the right
+bind left:ctrl;alt  nudge -10% +0    #moves window a little bit to the left
+bind up:ctrl;alt    nudge +0   -10%  #moves window a little bit up
+bind down:ctrl;alt  nudge +0   +10%  #moves window a little bit to the right
+#bind right:alt nudge +10% +0   #moves window a little bit to the right
+#bind left:alt  nudge -10% +0    #moves window a little bit to the left
+#bind up:alt    nudge +0   -10%  #moves window a little bit up
+#bind down:alt  nudge +0   +10%  #moves window a little bit to the right
+
+# Throw Bindings the
+# these don't work for some reason
+#bind 1:ctrl;alt         throw 0 resize
+#bind 2:ctrl;alt         throw 1 resize
+#bind 3:ctrl;alt         throw 2 resize
+bind right:ctrl;alt;cmd throw right resize
+#bind left:ctrl;alt;cmd  throw left  resize
+#bind up:ctrl;alt;cmd    throw up    resize
+#bind down:ctrl;alt;cmd  throw down  resize
+
+# Focus Bindings
+bind w:${hyper} focus up
+bind a:${hyper} focus left
+bind s:${hyper} focus down
+bind d:${hyper} focus right
+
+bind b:${hyper} focus behind
+
+bind t:${hyper} ${topright}
+
+# Window Hints
+bind .:cmd hint  # bring up letter prompts to select windows 
+
+# Grid 
+bind /:alt grid padding:5 0:6,2 1:8,3     # bring up resizing grid 
+
+# app switcher 
+# currently using BetterTouchTool switcher instead of this one
+#bind tab:cmd switch
+
+
