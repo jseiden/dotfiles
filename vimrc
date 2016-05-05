@@ -113,6 +113,10 @@ set showcmd
 " display line numbers 
 set number
 
+" show tabs, trailing spaces, etc.
+set listchars=eol:$,tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set list
+
 " number of lines below cursor
 set scrolloff=3
 
@@ -166,7 +170,7 @@ set splitright
 set smartindent
 
 " wrap settings
-set nowrap
+set wrap
 set textwidth=80
 set formatoptions+=t
 
@@ -209,6 +213,10 @@ nnoremap ! :!
 " behavior during fFtT
 " nnoremap <expr> ; getcharsearch().forward ? ';' : ',' 
 " nnoremap <expr> , getcharsearch().forward ? ',' : ';' 
+
+" make j and k move display lines instead of lines that wrap
+nnoremap j gj
+nnoremap k gk
 
 " center search results
 nnoremap n nzz
