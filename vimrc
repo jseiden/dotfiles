@@ -114,7 +114,8 @@ set showcmd
 set number
 
 " show tabs, trailing spaces, etc.
-set listchars=eol:$,tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+" set listchars=eol:$,tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set list
 
 " number of lines below cursor
