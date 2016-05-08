@@ -187,9 +187,6 @@ set nrformats=octal,hex,alpha
 
 "" MAPPINGS """""""""""""""""""""""""""
 
-" define leader key
-let g:mapleader="\<Space>" 
-
 " delete whole command-line like Emacs. replaces 'digraph'
 cnoremap <C-K> <C-E><C-U>
 
@@ -200,7 +197,7 @@ cnoremap <C-A> <C-B>
 " nnoremap Q <nop>
 
 " remove highlight from search results
-nnoremap <esc> :noh<return><esc>
+" nnoremap <silent> <esc> :noh<return><esc>
 
 " quickly enter command mode 
 nnoremap <cr> :
@@ -237,6 +234,10 @@ vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
 "" LEADER MAPPINGS ""
+
+" define leader key
+let g:mapleader="\<Space>" 
+
 
 " switch to alertnatve buffer
 nnoremap <Leader>a <C-^>
