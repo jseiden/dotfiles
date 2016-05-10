@@ -13,15 +13,15 @@ call vundle#begin()
  Plugin 'gmarik/Vundle.vim'
 
 " extend text objects etc.
- Plugin 'tpope/vim-surround'
- Plugin 'tpope/vim-unimpaired'
- Plugin 'tpope/vim-repeat'
- Plugin 'tpope/vim-ragtag'
- Plugin 'wellle/targets.vim'
+  Plugin 'tpope/vim-surround'
+  Plugin 'tpope/vim-unimpaired'
+  Plugin 'tpope/vim-repeat'
+  Plugin 'tpope/vim-ragtag'
+  Plugin 'wellle/targets.vim'
  
-" use resources outside vim
- Plugin 'thinca/vim-quickrun'
- Plugin 'christoomey/vim-tmux-navigator'
+" " use resources outside vim
+ " " Plugin 'thinca/vim-quickrun'
+ " " Plugin 'christoomey/vim-tmux-navigator'
 
 " visual aid
  Plugin 'bling/vim-airline'
@@ -32,7 +32,7 @@ call vundle#begin()
 " search and file navigation
  Plugin 'kien/ctrlp.vim'
  Plugin 'tpope/vim-vinegar'
- Plugin 'junegunn/fzf'
+ " Plugin 'junegunn/fzf'
 
 " completion etc.
  Plugin 'ervandew/supertab'
@@ -44,7 +44,6 @@ call vundle#begin()
  Plugin 'walm/jshint.vim'
 
 " colors
- Plugin 'skammer/vim-css-color'
  " Plugin 'romainl/Apprentice'
 
 " misc
