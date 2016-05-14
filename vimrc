@@ -18,6 +18,7 @@ call vundle#begin()
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-ragtag'
   Plugin 'wellle/targets.vim'
+  Plugin 'dahu/vim-fanfingtastic'
  
 " " use resources outside vim
  " " Plugin 'thinca/vim-quickrun'
@@ -159,7 +160,7 @@ set cpoptions+=>
 set backspace=2
 
 " make tabs = spaces and other tab behavior 
-set expandtab 
+set expandtab
 set smarttab
 set shiftwidth=2
 
@@ -185,6 +186,9 @@ set nrformats=octal,hex,alpha
 " set shellcmdflag=-ic
 
 "" MAPPINGS """""""""""""""""""""""""""
+
+" exit insert mode with jk
+inoremap jk <ESC>
 
 " delete whole command-line like Emacs. replaces 'digraph'
 cnoremap <C-K> <C-E><C-U>
@@ -236,7 +240,6 @@ nnoremap <silent> p p`]
 
 " define leader key
 let g:mapleader="\<Space>" 
-
 
 " switch to alertnatve buffer
 nnoremap <Leader>a <C-^>
