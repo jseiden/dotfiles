@@ -29,18 +29,22 @@
 ; scroll up with C-u
 (setq evil-want-C-u-scroll t)
 
-; use evil-mode
-(require 'evil)
-(evil-mode t)
-
 ; smex- uses ido for M-x
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
+; show which-key hints on right then bottom if not enough room 
+(which-key-setup-side-window-right-bottom)
+
+; use ido mode - interactively do things
 (require 'ido)
 (ido-mode t)
+;;(setq ido-separator "\n")	
 
+; use evil-mode
+(require 'evil)
+(evil-mode t)
 
 ;; GENERAL SETTINGS
 ;; disable alarm bell
@@ -50,6 +54,6 @@
 (setq inhibit-startup-message 1)
 
 ;; line numbers
-(global-linum-mode 1)
+(global-linum-mode t)
 
 

@@ -9,6 +9,7 @@ alias reprof=". ~/.bash_profile; . ~/.zshrc"
 alias ztime="/usr/bin/time /bin/zsh -i -c exit"
 
 # locations
+alias note="cd ~/Dropbox/Notes/;ls"
 alias pj="cd ~/Documents/projects;ls"
 alias dt="cd ~/Desktop/;ls"
 alias dl="cd ~/Downloads/;ls"

@@ -10,48 +10,50 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Plugins  
- Plugin 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
-" extend text objects etc.
-  Plugin 'tpope/vim-surround'
-  Plugin 'tpope/vim-unimpaired'
-  Plugin 'tpope/vim-repeat'
-  Plugin 'tpope/vim-ragtag'
-  Plugin 'wellle/targets.vim'
-  Plugin 'dahu/vim-fanfingtastic'
- 
+" extend operators, objects, motions, etc.
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-ragtag'
+Plugin 'wellle/targets.vim'
+Plugin 'dahu/vim-fanfingtastic'
+
 " " use resources outside vim
- " " Plugin 'thinca/vim-quickrun'
- " " Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'benmills/vimux'
+Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'thinca/vim-quickrun'
 
 " visual aid
- Plugin 'bling/vim-airline'
- Plugin 'unblevable/quick-scope'
- Plugin 'yggdroot/indentline'
+Plugin 'bling/vim-airline'
+Plugin 'unblevable/quick-scope'
+Plugin 'yggdroot/indentline'
  " Plugin 'nathanaelkane/vim-indent-guides'
 
 " search and file navigation
- Plugin 'kien/ctrlp.vim'
- Plugin 'tpope/vim-vinegar'
- " Plugin 'junegunn/fzf'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-vinegar'
+" Plugin 'junegunn/fzf'
 
 " completion etc.
- Plugin 'ervandew/supertab'
- Plugin 'jiangmiao/auto-pairs'
- Plugin 'osyo-manga/vim-over'
+Plugin 'ervandew/supertab'
+Plugin 'jiangmiao/auto-pairs'
+" Plugin 'osyo-manga/vim-over'
 
 " lang specific 
- Plugin 'pangloss/vim-javascript'
- Plugin 'walm/jshint.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'walm/jshint.vim'
 
 " colors
- " Plugin 'romainl/Apprentice'
+" Plugin 'romainl/Apprentice'
 
 " misc
- Plugin 'sjl/gundo.vim'
- Plugin 'maxbrunsfeld/vim-yankstack'
- Plugin 'tpope/vim-commentary'
- Plugin 'vim-auto-save'
+Plugin 'sjl/gundo.vim'
+Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'tpope/vim-commentary'
+Plugin 'vim-auto-save'
+Plugin 'jceb/vim-orgmode'
 " Plugin 'Shougo/vimproc.vim'
 
 " required for Vundle
@@ -66,6 +68,7 @@ runtime macros/matchit.vim
 " common Vundle commands 
 cabbrev PI PluginInstall
 cabbrev PC PluginClean
+
 
 "" GENERAL SETTINGS """""""""""""""""""""""""""
 
@@ -185,6 +188,7 @@ set nrformats=octal,hex,alpha
 " gives tty error when using vman
 " set shellcmdflag=-ic
 
+
 "" MAPPINGS """""""""""""""""""""""""""
 
 " exit insert mode with jk
@@ -194,7 +198,10 @@ inoremap jk <ESC>
 cnoremap <C-K> <C-E><C-U>
 
 " go to beginning of command-line like emacs and OS X
-cnoremap <C-A> <C-B>
+" cnoremap <C-A> <C-B>
+
+" repeat in visual mode
+vnoremap . :norm.<CR>
 
 " remap Q to avoid accidental Ex mode
 " nnoremap Q <nop>
@@ -283,6 +290,10 @@ nnoremap <Leader>q :q<CR>
 
 " <Leader>r is assigned to QuickRun. think 'run!'
 
+" Allows you to easily replace the current word and all its occurrences.
+nnoremap <Leader>rc :%s/\<<C-r><C-w>\>/
+vnoremap <Leader>rc y:%s/<C-r>"/
+
 " save all files if changes 
 nnoremap <Leader>u :update<CR>
 
@@ -311,6 +322,7 @@ nnoremap <Leader>0 :10b<CR>
 " Surround word with quotes
 map <Leader>' ysiw'
 map <Leader>" ysiw"
+
 
 "" MISC """"""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -364,6 +376,9 @@ endif
 
 "" PLUGIN SPECIFIC SETTINGS """""""""""""""""""""""""""""""""""""""""""""""""""
 
+" CtrlP search
+nnoremap <C-p> :CtrlPMixed<CR>
+
 " vim-airline enable the list of buffers on top
 let g:airline#extensions#tabline#enabled = 1
 
@@ -383,5 +398,5 @@ let g:auto_save_in_insert_mode = 0
 nmap <Leader>p <Plug>yankstack_substitute_older_paste
 nmap <Leader>P <Plug>yankstack_substitute_newer_paste
 
-" vim-csscolor
-" let g:cssColorVimDoNotMessMyUpdatetime = 1
+" tmux-navigator
+let g:tmux_navigator_save_on_switch = 1
