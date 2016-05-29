@@ -70,6 +70,11 @@ cabbrev PI PluginInstall
 cabbrev PC PluginClean
 
 
+" abbreviations 
+
+cabbrev ht tab help
+
+
 "" GENERAL SETTINGS """""""""""""""""""""""""""
 
 " disable .swp files
@@ -197,8 +202,12 @@ inoremap jk <ESC>
 " delete whole command-line like Emacs. replaces 'digraph'
 cnoremap <C-K> <C-E><C-U>
 
-" go to beginning of command-line like emacs and OS X
-" cnoremap <C-A> <C-B>
+" add readline style commands to command mode
+cnoremap <C-A> <Home>
+cnoremap <C-F> <Right>
+cnoremap <C-B> <Left>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
 
 " repeat in visual mode
 vnoremap . :norm.<CR>
@@ -369,7 +378,7 @@ if &term =~ "xterm"
     let &t_te = "\<Esc>[?47l"
 endif
 
-" TODO:
+" todo:
 " try to enable meta (alt) key. would add lots of room for cool stuff
 "execute "set <M-e>=\ee"
 
