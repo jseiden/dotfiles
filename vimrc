@@ -29,9 +29,11 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'bling/vim-airline'
 Plugin 'unblevable/quick-scope'
 Plugin 'yggdroot/indentline'
+Plugin 'jaxbot/semantic-highlight.vim'
  " Plugin 'nathanaelkane/vim-indent-guides'
 
 " search and file navigation
+" Plugin 'jlanzarotta/bufexplorer'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-vinegar'
 " Plugin 'junegunn/fzf'
@@ -257,6 +259,9 @@ nnoremap <silent> p p`]
 " define leader key
 let g:mapleader="\<Space>" 
 
+" erase hl
+nnoremap <silent> <Leader><Space> :noh<CR>
+
 " switch to alertnatve buffer
 nnoremap <Leader>a <C-^>
 
@@ -264,11 +269,15 @@ nnoremap <Leader>a <C-^>
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
 
 " close buffer
-nnoremap <Leader>bd :bd<CR>
+" nnoremap <Leader>bd :bd<CR>
 
 " next/prev buffer
-nnoremap <Leader>bn :bn<CR>
-nnoremap <Leader>bp :bp<CR>
+" nnoremap <Leader>bn :bn<CR>
+" nnoremap <Leader>bp :bp<CR>
+
+" commentary
+nnoremap <Leader>c :Commentary<CR>
+vnoremap <Leader>c :Commentary<CR>
 
 " diff edited buffer with saved version
 nnoremap <Leader>d :w !diff % -<CR>
@@ -294,6 +303,11 @@ vnoremap <Leader>k :m-2<cr>gv=gv
 " run js file in node
 nnoremap <Leader>n :!node %<CR>
 
+" make current window only window 
+map <Leader>o :only<CR>
+
+" <Leader>p is assigned to yank plugin
+
 " quit
 nnoremap <Leader>q :q<CR>
 
@@ -308,6 +322,9 @@ nnoremap <Leader>u :update<CR>
 
 " source this config
 nnoremap <Leader>sv :source $MYVIMRC<CR>
+
+" quick-edit vimrc
+nnoremap <Leader>v :e $MYVIMRC<cr>
 
 " save buffer
 nnoremap <Leader>w :write<CR>
