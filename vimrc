@@ -23,6 +23,7 @@ Plugin 'dahu/vim-fanfingtastic'
 " " use resources outside vim
 Plugin 'benmills/vimux'
 Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'mrtazz/simplenote.vim'
 " Plugin 'thinca/vim-quickrun'
 
 " visual aid
@@ -30,7 +31,8 @@ Plugin 'bling/vim-airline'
 Plugin 'unblevable/quick-scope'
 Plugin 'yggdroot/indentline'
 Plugin 'jaxbot/semantic-highlight.vim'
- " Plugin 'nathanaelkane/vim-indent-guides'
+" Plugin 'nathanaelkane/vim-indent-guides'
+" Plugin 'thinca/vim-quickrun'
 
 " search and file navigation
 " Plugin 'jlanzarotta/bufexplorer'
@@ -54,7 +56,7 @@ Plugin 'walm/jshint.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'tpope/vim-commentary'
-Plugin 'vim-auto-save'
+" Plugin 'vim-auto-save'
 Plugin 'jceb/vim-orgmode'
 " Plugin 'Shougo/vimproc.vim'
 
@@ -224,7 +226,7 @@ vnoremap . :norm.<CR>
 nnoremap <cr> :
 
 " press enter to go to line number like G or gg
-nnoremap <CR> G
+" nnoremap <CR> G
 
 " shortcut for external command 
 nnoremap ! :!
@@ -254,6 +256,9 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
+" quickly tap space to enter command mode
+nnoremap <CR> :
+
 "" LEADER MAPPINGS ""
 
 " define leader key
@@ -263,7 +268,11 @@ let g:mapleader="\<Space>"
 nnoremap <silent> <Leader><Space> :noh<CR>
 
 " switch to alertnatve buffer
-nnoremap <Leader>a <C-^>
+" nnoremap <Leader>a <C-^>
+
+" highlight whole document
+" TODO: do with without moving cursor to top 
+nnoremap <Leader>a ggVG
 
 " quick buffer switching by number. brings up list. type number then enter
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
