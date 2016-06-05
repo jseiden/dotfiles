@@ -69,133 +69,106 @@ filetype plugin indent on
 " enable included matchit.vim plugin (for matching html tags)
 runtime macros/matchit.vim
 
+
+" ABBREVIATIONS 
+
+cabbrev ht tab help
 " common Vundle commands 
 cabbrev PI PluginInstall
 cabbrev PC PluginClean
 
 
-" abbreviations 
-
-cabbrev ht tab help
-
-
-"" GENERAL SETTINGS """""""""""""""""""""""""""
-
-" disable .swp files
-" set noswapfile
-
-set modifiable
-
-" enable syntax highlighting 
-syntax on 
-
-" share clipboard with osx
-set clipboard=unnamed
-
-" enable mouse in (a)ll modes 
-set mouse=a
-
-" flash screen instead of annoying beep for error
-set visualbell 
-
-" enable switching between unsaved buffers
-set hidden 
-
-" refresh unsaved files if changed elsewhere (unless deleted)
-set autoread
-
-" redraw less often
-set lazyredraw 
-
-" for fast terminal connection. let vim redraw faster
-set ttyfast
-
-" time between key presses 
-set timeoutlen=1000 ttimeoutlen=10
-
-" display current mode
-set showmode  
-
-" always show status line
-set laststatus=2
-
-" display last command
-set showcmd
-
-" display line numbers 
-set number
-
-" show tabs, trailing spaces, etc.
-" set listchars=eol:$,tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
-set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
-set list
-
-" number of lines below cursor
-set scrolloff=3
-
-" lowercase search matches upper and lower. upper only matches upper
-set ignorecase smartcase
-
-" show results while typing 
-set incsearch 
-
-" highlight search
-set hlsearch  
-
- " show matching brace etc.
-set showmatch 
+" DISPLAY SETTINGS
 
 " highlight cursor pos 
 set cursorline 
 hi cursorline cterm=none
 hi cursorlinenr ctermfg=red
+" show current mode
+set showmode  
+" display last command
+set showcmd
+" display line numbers 
+set number
+" wrap settings
+set wrap
+set textwidth=80
+set formatoptions+=t
+" enable syntax highlighting 
+syntax on 
+" always show status line
+set laststatus=2
+" show file in title bar 
+set title
+" show tabs, trailing spaces, etc.
+" set listchars=eol:$,tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set list
+" number of lines below cursor
+set scrolloff=2
+" highlight search
+set hlsearch  
+" show results while typing 
+set incsearch 
+ " show matching brace etc.
+set showmatch 
+" splitting a window will put new window to the right of current one 
+set splitright
+" flash screen instead of annoying beep for error
+set visualbell 
 
+
+" EDITOR SETTINGS
+
+" make backspace work in insert mode
+set backspace=2
+" append to buffer on new line
+set cpoptions+=>
+" turn off auto comment insertion
+set formatoptions-=cro
+" makes buffer editable by default 
+set modifiable
+" lowercase search matches upper and lower. upper only matches upper
+set ignorecase smartcase
+" stay at same column when changing lines  
+set nostartofline
+" increment/decrement letters in normal mode with <C-a> and <C-x> (like numbers)
+set nrformats=octal,hex,alpha
+" don't autotab when pasting
+set paste
+" make tabs = spaces and other tab behavior 
+set expandtab
+set smarttab
+set shiftwidth=2
+" predict indent on new line (autoindent is another option)
+set smartindent
 " omnicomplete settings
 set omnifunc=syntaxcomplete#Complete
-
 " completion behavior
 set wildmode=longest,list,full
 " use tab to show possible completions
 set wildmenu 
 
-" don't autotab when pasting
-" set paste seems to mess up delimitMate
-"set paste
 
-" turn off auto comment insertion
-set formatoptions-=cro
+" SYSTEM SETTINGS 
 
-" append to buffer on new line
-set cpoptions+=>
+" refresh unsaved files if changed elsewhere (unless deleted)
+set autoread
+" share clipboard with osx
+set clipboard=unnamed
+" redraw less often
+set lazyredraw 
+" for fast terminal connection. let vim redraw faster
+set ttyfast
+" enable switching between unsaved buffers
+set hidden 
+" enable mouse in (a)ll modes 
+set mouse=a
+" disable .swp files
+" set noswapfile
+" time between key presses 
+set timeoutlen=1000 ttimeoutlen=10
 
-" make backspace work in insert mode
-set backspace=2
-
-" make tabs = spaces and other tab behavior 
-set expandtab
-set smarttab
-set shiftwidth=2
-
-" splitting a window will put new window to the right of current one 
-set splitright
-
-" predict indent on new line (autoindent is another option)
-set smartindent
-
-" wrap settings
-set wrap
-set textwidth=80
-set formatoptions+=t
-
-" stay at same column when changing lines  
-set nostartofline
-
-" increment/decrement letters in normal mode with <C-a> and <C-x> (like numbers)
-set nrformats=octal,hex,alpha
-
-" make :! shell interactive
-" gives tty error when using vman
-" set shellcmdflag=-ic
 
 
 "" MAPPINGS """""""""""""""""""""""""""
