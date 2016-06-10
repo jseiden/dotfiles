@@ -12,7 +12,7 @@ call vundle#begin()
 " Plugins  
 Plugin 'gmarik/Vundle.vim'
 
-" extend operators, objects, motions, etc.
+" extend operators, text objects, motions, etc.
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-repeat'
@@ -56,6 +56,7 @@ Plugin 'walm/jshint.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'tpope/vim-commentary'
+Plugin 'junegunn/vim-peekaboo'
 " Plugin 'vim-auto-save'
 Plugin 'jceb/vim-orgmode'
 " Plugin 'Shougo/vimproc.vim'
@@ -68,6 +69,9 @@ filetype plugin indent on
 
 " enable included matchit.vim plugin (for matching html tags)
 runtime macros/matchit.vim
+
+" use fzf in vim
+set rtp+=/usr/local/opt/fzf
 
 
 " ABBREVIATIONS 
