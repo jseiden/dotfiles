@@ -1,9 +1,7 @@
- This is directory to organize and backup various config files. 
- 
- Feel free to take a look around.
+This is a repo to organize and backup various config files. 
 
- The dots are omitted here for visibility.
-
- All files are works in progress. 
+All files are works in progress and might break stuff. 
  
- Some custom mappings are taken from forums and other public dotfies.
+Many mappings are taken from forums and other public dotfies.
+ 
+The dots are omitted here for visibility.
