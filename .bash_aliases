@@ -1,8 +1,8 @@
 alias d="du -ach"
+alias gs="git status"
 alias dt='cd /mnt/c/Users/dude1/Desktop'
 alias dl='cd /mnt/c/Users/dude1/Downloads'
 alias fuck="thefuck"
-alias aws1='sudo ssh -i ~/.ssh/AWSKeyPair1.pem ec2-user@ec2-54-213-224-205.us-west-2.compute.amazonaws.com'
 alias j="jobs"
 alias matrix='cmatrix'
 alias fire='cacafire'
